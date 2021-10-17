@@ -19,6 +19,10 @@ const Root = () => {
       <Route path={Routes.characters}>
         <Characters />
       </Route>
+
+      <Route path="/">
+        <Characters />
+      </Route>
     </Switch>
   );
 };

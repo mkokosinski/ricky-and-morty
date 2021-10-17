@@ -1,5 +1,5 @@
 export default {
-  characters: '/',
-  characterDetail: '/detail/:id',
-  errorPage: '/error',
+  characters: '/ricky-and-morty',
+  characterDetail: '/ricky-and-morty/detail/:id',
+  errorPage: '/ricky-and-morty/error',
 };

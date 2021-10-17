@@ -8,7 +8,7 @@ type Props = ChararterListItem;
 const CharacterItem = ({
   id, image, name, species,
 }: Props) => (
-  <Link className="character" to={`/detail/${id}`} key={id}>
+  <Link className="character" to={`/ricky-and-morty/detail/${id}`} key={id}>
     <img src={image} alt={name} loading="lazy" />
     <div className="character__label">
       <span className="character__name">{name}</span>
