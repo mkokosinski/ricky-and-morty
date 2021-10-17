@@ -21,6 +21,8 @@ module.exports = {
     "max-len": [1, { "code": 120 }],
     'react/react-in-jsx-scope': 'off',
     'react/jsx-filename-extension': [1, { extensions: ['.tsx', '.ts'] }],
-    'react/require-default-props': 0
+    'react/jsx-props-no-spreading': 0,
+    'react/require-default-props': 0,
+    '@typescript-eslint/no-unused-vars': 1,
   },
 };

@@ -1,0 +1,26 @@
+@use 'styles' as *;
+
+.placeholderItem {
+  background-color: $black-10;
+  box-shadow: $box-shadow-1;
+  overflow: hidden;
+  position: relative;
+
+  &::before {
+    animation: fade ease-in-out infinite 800ms;
+    background: linear-gradient(90deg, $black-10, $black-20, $black-10);
+    content: '';
+    height: 100%;
+    position: absolute;
+    width: 100%;
+  }
+}
+
+@keyframes fade {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
