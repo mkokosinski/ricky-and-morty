@@ -10,7 +10,7 @@ type Props = {
 
 const CharacterItem = ({ id, image, name } : Props) => (
   <Link className="character" to={`/detail/${id}`} key={id}>
-    <img src={image} alt={name} />
+    <img src={image} alt={name} loading="lazy" />
     {name}
   </Link>
 );

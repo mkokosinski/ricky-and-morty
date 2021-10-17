@@ -12,3 +12,5 @@ export type Chararter = {
     name: string;
   }>;
 };
+
+export type ChararterListItem = Pick<Chararter, 'id' | 'image' | 'name' | 'species'>;

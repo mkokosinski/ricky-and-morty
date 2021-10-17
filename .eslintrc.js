@@ -13,16 +13,23 @@ module.exports = {
     project: ['./tsconfig.json'],
     sourceType: 'module',
   },
-  ignorePatterns: ["babel.config.js"],
+  ignorePatterns: ['babel.config.js'],
   plugins: ['react', '@typescript-eslint'],
   rules: {
-    "linebreak-style": 0,
+    'linebreak-style': 0,
     'no-console': 1,
-    "max-len": [1, { "code": 120 }],
+    'max-len': [1, { code: 120 }],
     'react/react-in-jsx-scope': 'off',
     'react/jsx-filename-extension': [1, { extensions: ['.tsx', '.ts'] }],
     'react/jsx-props-no-spreading': 0,
     'react/require-default-props': 0,
     '@typescript-eslint/no-unused-vars': 1,
+    'no-param-reassign': [
+      'error',
+      {
+        props: true,
+        ignorePropertyModificationsFor: ['state'],
+      },
+    ],
   },
 };

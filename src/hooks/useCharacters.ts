@@ -1,39 +1,21 @@
-import { useQuery, gql } from '@apollo/client';
-import { ResponseType } from 'types/baseTypes';
-import { Chararter } from 'types/characterTypes';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchCharacters, selectCharacters } from 'store/slices/charactersSlice';
+import { QueryVariables } from 'types/baseTypes';
 
-type List = {
-  characters: ResponseType<Pick<Chararter, 'id' | 'image' | 'name' | 'species'>>;
-};
+const useCharacters = ({ page = 1, filter }: QueryVariables) => {
+  const dispatch = useDispatch();
+  const {
+    status, data, error, info,
+  } = useSelector(selectCharacters);
 
-const getCharacters = gql`
-  query getCharacters($page: Int, $filter: FilterCharacter) {
-    characters(page: $page, filter: $filter) {
-      info {
-        count
-        next
-        pages
-        prev
-      }
-      results {
-        id
-        image
-        name
-        species
-      }
-    }
-  }
-`;
+  useEffect(() => {
+    dispatch(fetchCharacters({ page, filter }));
+  }, [page, filter]);
 
-const useCharacters = ({ page = 1, filter }: { page: number; filter: { name: string } }) => {
-  const { loading, error, data } = useQuery<List>(getCharacters, {
-    variables: {
-      page,
-      filter,
-    },
-  });
-
-  return { loading, error, data };
+  return {
+    status, data, error, info,
+  };
 };
 
 export default useCharacters;

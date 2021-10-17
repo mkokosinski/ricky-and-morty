@@ -1,37 +1,22 @@
-import { useQuery, gql } from '@apollo/client';
-import { Chararter } from 'types/characterTypes';
-
-type ChararterDetail = {
-  character: Chararter;
-};
-
-const getCharacter = gql`
-  query getCharacter($id: ID!) {
-    character(id: $id) {
-      id
-      image
-      name
-      species
-      gender
-      status
-      location {
-        name
-      }
-      episode {
-        name
-      }
-    }
-  }
-`;
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchDetail, selectDetail } from 'store/slices/detailSlice';
 
 const useCharacterDetails = (id: string) => {
-  const { loading, error, data } = useQuery<ChararterDetail>(getCharacter, {
-    variables: {
-      id,
-    },
-  });
+  const dispatch = useDispatch();
+  const {
+    status, data, error,
+  } = useSelector(selectDetail);
 
-  return { loading, error, data };
+  useEffect(() => {
+    dispatch(fetchDetail(id));
+  }, [id]);
+
+  return {
+    status,
+    data,
+    error,
+  };
 };
 
 export default useCharacterDetails;

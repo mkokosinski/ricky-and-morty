@@ -6,7 +6,11 @@ const DetailView = () => {
   const { push } = useHistory();
   const { id } = useParams<{ id:string }>();
 
-  const { loading, data } = useCharacterDetails(id);
+  const { data: character } = useCharacterDetails(id);
+
+  if (!character) {
+    return null;
+  }
 
   return (
     <div>
@@ -14,22 +18,19 @@ const DetailView = () => {
         <button type="button" onClick={() => push(Routes.characterList)}>go back</button>
       </div>
 
-      {loading || !data ? 'loading...' : (
-
+      <div>
+        <div>{character.name}</div>
+        <div>{character.gender}</div>
+        <div>{character.species}</div>
+        <div>{character.status}</div>
         <div>
-          <div>{data.character.name}</div>
-          <div>{data.character.gender}</div>
-          <div>{data.character.species}</div>
-          <div>{data.character.status}</div>
-          <div>
-            {data.character.episode.map((e) => (
-              <div key={e.name}>{e.name}</div>
-            ))}
+          {character.episode.map((e) => (
+            <div key={e.name}>{e.name}</div>
+          ))}
 
-          </div>
         </div>
+      </div>
 
-      )}
     </div>
   );
 };

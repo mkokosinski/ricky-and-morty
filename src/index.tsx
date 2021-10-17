@@ -1,8 +1,8 @@
-import { ApolloProvider } from '@apollo/client';
-import { client } from 'api/api';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
+import store from 'store/store';
 import AppRouter from './components/AppRouter/AppRouter';
 
 import './main.scss';
@@ -10,9 +10,9 @@ import './main.scss';
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <ApolloProvider client={client}>
+      <Provider store={store}>
         <AppRouter />
-      </ApolloProvider>
+      </Provider>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root'),
