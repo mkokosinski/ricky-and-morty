@@ -3,11 +3,12 @@ import SearchInput from 'components/SearchInput/SearchInput';
 import useCharacters from 'hooks/useCharacters';
 import { useMemo, useState } from 'react';
 import { RequestStatus } from 'types/baseTypes';
-import './CharacterList.scss';
+import './Characters.scss';
 import CharacterItem from './Item/CharacterItem';
+import CharactersList from './List/CharactersList';
 import ListPlaceholder from './Placeholder/ListPlaceholder';
 
-const CharacterList = () => {
+const Characters = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchQuery, setQuery] = useState('');
 
@@ -19,20 +20,18 @@ const CharacterList = () => {
   return (
     <div className="characters">
       <div className="characters__topbar">
-        <SearchInput onSubmit={setQuery} />
+        <SearchInput className="characters__search" placeholder="Search..." onSubmit={setQuery} />
         <Pagination totalPages={info?.pages} currentPage={currentPage} changePage={setCurrentPage} />
       </div>
       <div className="characters__grid">
         {isLoading ? (
           <ListPlaceholder />
         ) : (
-          data!.map((character) => (
-            <CharacterItem key={character.id} id={character.id} image={character.image} name={character.name} />
-          ))
+          <CharactersList characters={data} />
         )}
       </div>
     </div>
   );
 };
 
-export default CharacterList;
+export default Characters;

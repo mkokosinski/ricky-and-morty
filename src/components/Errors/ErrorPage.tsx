@@ -11,7 +11,7 @@ const ErrorPage = () => {
   const { push } = useHistory();
 
   const gotoHome = () => {
-    push(Routes.characterList);
+    push(Routes.characters);
   };
 
   useEffect(() => {

@@ -38,6 +38,8 @@ export const charactersSlice = createSlice({
     builder.addCase(fetchCharacters.rejected, (state, action) => {
       state.status = RequestStatus.rejected;
       state.error = action.payload;
+      state.data = [];
+      state.info = null;
     });
   },
 });

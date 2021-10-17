@@ -2,11 +2,23 @@
 
 .characters {
   &__topbar {
+    align-items: center;
     display: flex;
+    gap: 10px;
     flex-direction: column;
+    margin: 10px 0 20px;
+
     @include sm {
       flex-direction: row;
       justify-content: space-between;
+    }
+  }
+
+  &__search{
+    width: 100%;
+    
+    @include sm {
+      max-width: 300px;
     }
   }
 

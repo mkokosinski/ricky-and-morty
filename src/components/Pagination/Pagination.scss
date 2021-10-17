@@ -1,0 +1,23 @@
+.pagination{
+    align-items: center;
+    display: flex;
+    gap: 10px;
+
+    .input{
+        width: 5ch;
+    }
+
+    &__pages{
+        align-items: center;
+        display: flex;
+        gap: 4px;
+        font-size: .875rem;
+        line-height: 1;
+    }
+
+    &__arrow{
+        width: 14px;
+        &--right{
+            transform: rotate(180deg);
+        }
+}}

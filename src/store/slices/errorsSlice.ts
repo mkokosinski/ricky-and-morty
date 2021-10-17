@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import apiHelpers from 'api/apiHelpers';
 import { RootState } from 'store/store';
 
 export const errosSlice = createSlice({
@@ -12,7 +13,7 @@ export const errosSlice = createSlice({
     builder.addMatcher(
       (action) => action.type.endsWith('/rejected'),
       (state, action) => {
-        state.isDataError = true;
+        state.isDataError = apiHelpers.ERROR_CODE.REQUEST.test(action.statusCode);
         state.messages = action.payload.errors;
       },
     ).addMatcher(

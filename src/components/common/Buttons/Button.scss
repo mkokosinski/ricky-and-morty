@@ -1,0 +1,18 @@
+@use 'styles' as *;
+
+.button {
+  background-color: $white-100;
+  border: none;
+  box-shadow: $shadow-input;
+  cursor: pointer;
+  outline: none;
+  transition: box-shadow 150ms;
+
+  &:hover {
+  box-shadow: $shadow-input-focused;
+  }
+
+  &:focus{
+      outline: 1px solid $black-50;
+  }
+}

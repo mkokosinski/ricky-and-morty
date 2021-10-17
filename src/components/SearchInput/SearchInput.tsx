@@ -1,14 +1,14 @@
+import Input from 'components/common/Inputs/Input';
 import {
-  ChangeEvent, SyntheticEvent, useState,
+  ChangeEvent, InputHTMLAttributes, SyntheticEvent, useState,
 } from 'react';
 
 type Props = {
   onSubmit: (query: string)=>void
-};
+} & Omit<InputHTMLAttributes<HTMLInputElement>, 'onSubmit'>;
 
-const SearchInput = ({ onSubmit }: Props) => {
+const SearchInput = ({ className = '', onSubmit, ...props }: Props) => {
   const [inputValue, setValue] = useState('');
-  const test = 'sad';
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
@@ -24,14 +24,9 @@ const SearchInput = ({ onSubmit }: Props) => {
   };
 
   return (
-    <div>
-      <div>
-        <form onSubmit={handleSubmit}>
-          <input type="search" value={inputValue} onChange={handleInputChange} onBlur={handleSubmit} />
-        </form>
-        {test}
-      </div>
-    </div>
+    <form className={className} onSubmit={handleSubmit}>
+      <Input {...props} type="search" value={inputValue} onChange={handleInputChange} onBlur={handleSubmit} />
+    </form>
   );
 };
 

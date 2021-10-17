@@ -15,7 +15,7 @@ const DetailView = () => {
   return (
     <div>
       <div>
-        <button type="button" onClick={() => push(Routes.characterList)}>go back</button>
+        <button type="button" onClick={() => push(Routes.characters)}>go back</button>
       </div>
 
       <div>

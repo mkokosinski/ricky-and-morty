@@ -1,4 +1,4 @@
-import CharacterList from 'components/CharacterList/CharacterList';
+import Characters from 'components/Characters/Characters';
 import DetailView from 'components/DetailView/DetailView';
 import ErrorPage from 'components/Errors/ErrorPage';
 import useErrorBoundary from 'hooks/useErrorBoundary';
@@ -16,8 +16,8 @@ const Root = () => {
         <ErrorPage />
       </Route>
 
-      <Route path={Routes.characterList}>
-        <CharacterList />
+      <Route path={Routes.characters}>
+        <Characters />
       </Route>
     </Switch>
   );

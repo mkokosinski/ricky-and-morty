@@ -1,0 +1,14 @@
+@use 'styles' as *;
+
+.input {
+  box-shadow: $shadow-input;
+  border: none;
+  outline: none;
+  padding: 0.4rem 0.6rem;
+  transition: box-shadow 100ms ease-out;
+  width: 100%;
+
+  &:focus {
+    box-shadow: $shadow-input-focused;
+  }
+}

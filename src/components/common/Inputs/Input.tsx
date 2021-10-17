@@ -1,9 +1,12 @@
 import { InputHTMLAttributes } from 'react';
+import './Input.scss';
 
-type Props = {
-  test? : string;
-} & InputHTMLAttributes<HTMLInputElement>;
+type Props = InputHTMLAttributes<HTMLInputElement>;
 
-const Input = ({ name, type = 'text', ...inputProps }: Props) => (
-  <input type={type} {...inputProps} />
+const Input = ({
+  className = '', name, type = 'text', ...inputProps
+}: Props) => (
+  <input className={`input ${className}`} type={type} name={name} id={name} {...inputProps} />
 );
+
+export default Input;

@@ -1,5 +1,5 @@
 export default {
-  characterList: '/',
+  characters: '/',
   characterDetail: '/detail/:id',
   errorPage: '/error',
 };
