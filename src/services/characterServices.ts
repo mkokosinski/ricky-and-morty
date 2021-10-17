@@ -15,6 +15,7 @@ query getCharacter($id: ID!) {
         name
       }
       episode {
+        episode
         name
       }
     }

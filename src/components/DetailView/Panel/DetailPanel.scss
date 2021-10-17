@@ -1,0 +1,22 @@
+@use 'styles' as *;
+
+.detail-panel{
+    align-items: center;
+    background-color: $white-100;
+    box-shadow: $shadow-tile;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem .75rem;
+
+    &__label{
+        opacity: .7;
+        &::first-letter{
+            text-transform: uppercase;
+        }
+    }
+    
+    &__value{
+        font-weight: 500;
+        text-align: right;
+    }
+}

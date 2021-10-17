@@ -1,0 +1,41 @@
+@use 'styles' as *;
+
+$episodePadding: .75rem;
+
+.episodes {
+  background-color: $white-100;
+  box-shadow: $shadow-tile;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 1rem 0.75rem;
+
+  &__label {
+    opacity: 0.7;
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+
+  .episode {
+    display: flex;
+    flex-direction: column;
+    padding: $episodePadding 0;
+    position: relative;
+
+    &:not(:last-child)::after{
+        background-color: $black-20;
+        bottom: 0;
+        content: '';
+        height: 1px;
+        left: -$episodePadding;
+        position: absolute;
+        width: calc(100% + 2 * $episodePadding);
+    }
+
+    &__number {
+      opacity: 0.7;
+    }
+  }
+}

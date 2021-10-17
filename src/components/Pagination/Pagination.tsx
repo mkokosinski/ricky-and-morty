@@ -1,6 +1,8 @@
 import Button from 'components/common/Buttons/Button';
 import Input from 'components/common/Inputs/Input';
-import { ChangeEvent, useEffect, useState } from 'react';
+import {
+  ChangeEvent, KeyboardEvent, useEffect, useState,
+} from 'react';
 
 import { ReactComponent as Arrow } from 'assets/icons/arrow.svg';
 
@@ -59,7 +61,12 @@ const Pagination = ({ totalPages, currentPage, changePage }: Props) => {
       </div>
 
       <div className="pagination__pages">
-        <Input type="number" value={inputValue} onChange={handleInputChange} onBlur={handleBlur} />
+        <Input
+          type="number"
+          value={inputValue}
+          onChange={handleInputChange}
+          onBlur={handleBlur}
+        />
         <span>/</span>
         <span>{totalPages}</span>
       </div>

@@ -26,4 +26,16 @@
     flex: 1;
     object-fit: cover;
   }
+
+  &__label{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__name{
+    font-weight: 500;
+  }
+  &__species{
+    opacity: .5;
+  }
 }

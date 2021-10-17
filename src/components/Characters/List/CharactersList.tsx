@@ -11,7 +11,7 @@ const CharactersList = ({ characters }: Props) => (
   <>
     {characters?.length ? (
       characters.map((character) => (
-        <CharacterItem key={character.id} id={character.id} image={character.image} name={character.name} />
+        <CharacterItem key={character.id} {...character} />
       ))
     ) : (
       <NoResults />
