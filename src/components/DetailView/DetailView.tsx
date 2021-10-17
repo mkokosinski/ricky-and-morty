@@ -1,9 +1,10 @@
 import { useHistory, useParams } from 'react-router';
-import { ReactComponent as Arrow } from 'assets/icons/arrow.svg';
+import { Helmet } from 'react-helmet';
 
 import Button from 'components/common/Buttons/Button';
 import Routes from 'components/AppRouter/Routes';
 
+import { ReactComponent as Arrow } from 'assets/icons/arrow.svg';
 import useCharacterDetails from 'hooks/useCharacterDetails';
 import { ChararterLabels } from 'types/characterTypes';
 
@@ -23,28 +24,35 @@ const DetailView = () => {
   }
 
   return (
-    <div className="detail-view">
-      <div className="detail-view__topbar">
-        <Button type="button" onClick={() => push(Routes.characters)}>
-          <Arrow className="detail-view__arrow" />
-        </Button>
-      </div>
-
-      <div className="detail-view__description">
-        <div className="detail-view__image">
-          <img src={character.image} alt="" />
+    <>
+      <Helmet>
+        <title>
+          {`R&M | ${character.name}`}
+        </title>
+      </Helmet>
+      <div className="detail-view">
+        <div className="detail-view__topbar">
+          <Button type="button" onClick={() => push(Routes.characters)}>
+            <Arrow className="detail-view__arrow" />
+          </Button>
         </div>
 
-        <DetailPanel label={ChararterLabels.name} value={character.name} />
-        <DetailPanel label={ChararterLabels.gender} value={character.gender} />
-        <DetailPanel label={ChararterLabels.species} value={character.species} />
-        <DetailPanel label={ChararterLabels.status} value={character.status} />
-        <DetailPanel label={ChararterLabels.location.name} value={character.location.name} />
+        <div className="detail-view__description">
+          <div className="detail-view__image">
+            <img src={character.image} alt="" />
+          </div>
+
+          <DetailPanel label={ChararterLabels.name} value={character.name} />
+          <DetailPanel label={ChararterLabels.gender} value={character.gender} />
+          <DetailPanel label={ChararterLabels.species} value={character.species} />
+          <DetailPanel label={ChararterLabels.status} value={character.status} />
+          <DetailPanel label={ChararterLabels.location.name} value={character.location.name} />
+        </div>
+        <div className="detail-view__episodes">
+          <DetailEpisodes episode={character.episode} />
+        </div>
       </div>
-      <div className="detail-view__episodes">
-        <DetailEpisodes episode={character.episode} />
-      </div>
-    </div>
+    </>
   );
 };
 
