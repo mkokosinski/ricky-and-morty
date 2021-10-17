@@ -27,15 +27,15 @@
     object-fit: cover;
   }
 
-  &__label{
+  &__label {
     display: flex;
     justify-content: space-between;
   }
 
-  &__name{
+  &__name {
     font-weight: 500;
   }
-  &__species{
-    opacity: .5;
+  &__species {
+    opacity: 0.5;
   }
 }

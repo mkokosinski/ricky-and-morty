@@ -28,16 +28,18 @@ export enum RequestStatus {
 }
 
 export type SliceType<T> = {
-  data: T | null, status: RequestStatus, error: null | any
+  data: T | null;
+  status: RequestStatus;
+  error: null | any;
 };
 
 export type PageSliceType<T> = SliceType<T> & Pick<ResponseType<T>, 'info'>;
 
 export type QueryVariables = {
-  page: number,
-  filter: Filters
+  page: number;
+  filter: Filters;
 };
 
 export type Filters = {
-  name: string
+  name: string;
 };

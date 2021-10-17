@@ -28,21 +28,16 @@ const ErrorPage = () => {
         Details:
         <ul>
           {messages.map((message) => (
-            <li>
-              {message}
-            </li>
+            <li>{message}</li>
           ))}
         </ul>
-
       </div>
 
       <div>
         <button type="button" onClick={gotoHome}>
           Go to home page
         </button>
-        <a href="mailto:mkokosinski91@gmail.com">
-          Contact us
-        </a>
+        <a href="mailto:mkokosinski91@gmail.com">Contact us</a>
       </div>
     </div>
   );

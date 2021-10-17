@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
 import { fetchCharacters, selectCharacters } from 'store/slices/charactersSlice';
 import { QueryVariables } from 'types/baseTypes';
 
@@ -14,7 +15,10 @@ const useCharacters = ({ page = 1, filter }: QueryVariables) => {
   }, [page, filter]);
 
   return {
-    status, data, error, info,
+    status,
+    data,
+    error,
+    info,
   };
 };
 

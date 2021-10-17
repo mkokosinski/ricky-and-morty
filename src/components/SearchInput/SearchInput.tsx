@@ -1,10 +1,11 @@
-import Input from 'components/common/Inputs/Input';
 import {
   ChangeEvent, InputHTMLAttributes, SyntheticEvent, useState,
 } from 'react';
 
+import Input from 'components/common/Inputs/Input';
+
 type Props = {
-  onSubmit: (query: string)=>void
+  onSubmit: (query: string) => void;
 } & Omit<InputHTMLAttributes<HTMLInputElement>, 'onSubmit'>;
 
 const SearchInput = ({ className = '', onSubmit, ...props }: Props) => {

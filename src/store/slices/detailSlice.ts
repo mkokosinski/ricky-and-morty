@@ -1,6 +1,8 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+
 import characterServices from 'services/characterServices';
 import { RootState } from 'store/store';
+
 import { RequestStatus, SliceType } from 'types/baseTypes';
 import { Chararter } from 'types/characterTypes';
 

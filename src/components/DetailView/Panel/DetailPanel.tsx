@@ -1,8 +1,8 @@
 import './DetailPanel.scss';
 
 type Props = {
-  label: string,
-  value: string
+  label: string;
+  value: string;
 };
 
 const DetailPanel = ({ label, value }: Props) => (

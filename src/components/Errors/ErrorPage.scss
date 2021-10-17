@@ -1,17 +1,17 @@
 @use 'styles' as *;
 
-.error-page{
-    background-color: $white-100;
-    box-shadow: $shadow-tile;
-    margin: 10vh auto;
-    padding: 6vw;
+.error-page {
+  background-color: $white-100;
+  box-shadow: $shadow-tile;
+  margin: 10vh auto;
+  padding: 6vw;
 
-    &__header{
-        color: $black-70;
-        font-size: 1.8rem;
-    }
+  &__header {
+    color: $black-70;
+    font-size: 1.8rem;
+  }
 
-    &__details{
-        margin: 20px 10px;
-    }
+  &__details {
+    margin: 20px 10px;
+  }
 }

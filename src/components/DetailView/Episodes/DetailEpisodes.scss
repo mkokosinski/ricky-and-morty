@@ -1,6 +1,6 @@
 @use 'styles' as *;
 
-$episodePadding: .75rem;
+$episodePadding: 0.75rem;
 
 .episodes {
   background-color: $white-100;
@@ -24,14 +24,14 @@ $episodePadding: .75rem;
     padding: $episodePadding 0;
     position: relative;
 
-    &:not(:last-child)::after{
-        background-color: $black-20;
-        bottom: 0;
-        content: '';
-        height: 1px;
-        left: -$episodePadding;
-        position: absolute;
-        width: calc(100% + 2 * $episodePadding);
+    &:not(:last-child)::after {
+      background-color: $black-20;
+      bottom: 0;
+      content: '';
+      height: 1px;
+      left: -$episodePadding;
+      position: absolute;
+      width: calc(100% + 2 * $episodePadding);
     }
 
     &__number {

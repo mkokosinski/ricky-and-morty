@@ -31,13 +31,7 @@ const Characters = () => {
           <SearchInput className="characters__search" placeholder="Search..." onSubmit={setQuery} />
           <Pagination totalPages={info?.pages} currentPage={currentPage} changePage={setCurrentPage} />
         </div>
-        <div className="characters__grid">
-          {isLoading ? (
-            <ListPlaceholder />
-          ) : (
-            <CharactersList characters={data} />
-          )}
-        </div>
+        <div className="characters__grid">{isLoading ? <ListPlaceholder /> : <CharactersList characters={data} />}</div>
       </div>
     </>
   );

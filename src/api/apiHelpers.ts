@@ -16,7 +16,7 @@ const handleResponse = (response: Response) => response.json().then((json) => {
 
 const ERROR_CODE = {
   SERVER: /^5[0-9]{2}$/,
-  REQUEST: /^5[0-9]{2}$/,
+  REQUEST: /^4[0-9]{2}$/,
 };
 
 export default {

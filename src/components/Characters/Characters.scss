@@ -14,9 +14,9 @@
     }
   }
 
-  &__search{
+  &__search {
     width: 100%;
-    
+
     @include sm {
       max-width: 300px;
     }

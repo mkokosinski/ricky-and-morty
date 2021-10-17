@@ -4,9 +4,9 @@ import { Helmet } from 'react-helmet';
 import Button from 'components/common/Buttons/Button';
 import Routes from 'components/AppRouter/Routes';
 
-import { ReactComponent as Arrow } from 'assets/icons/arrow.svg';
 import useCharacterDetails from 'hooks/useCharacterDetails';
 import { ChararterLabels } from 'types/characterTypes';
+import { ReactComponent as Arrow } from 'assets/icons/arrow.svg';
 
 import DetailEpisodes from './Episodes/DetailEpisodes';
 import DetailPanel from './Panel/DetailPanel';
@@ -26,9 +26,7 @@ const DetailView = () => {
   return (
     <>
       <Helmet>
-        <title>
-          {`R&M | ${character.name}`}
-        </title>
+        <title>{`R&M | ${character.name}`}</title>
       </Helmet>
       <div className="detail-view">
         <div className="detail-view__topbar">

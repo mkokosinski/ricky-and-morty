@@ -1,10 +1,12 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+
 import characterServices from 'services/characterServices';
+
 import { RootState } from 'store/store';
+import { ChararterListItem } from 'types/characterTypes';
 import {
   QueryVariables, RequestStatus, ResponseType, PageSliceType,
 } from 'types/baseTypes';
-import { ChararterListItem } from 'types/characterTypes';
 
 export const fetchCharacters = createAsyncThunk<ResponseType<ChararterListItem>, QueryVariables>(
   'characters/fetchCharacters',
@@ -21,7 +23,10 @@ export const fetchCharacters = createAsyncThunk<ResponseType<ChararterListItem>,
 export const charactersSlice = createSlice({
   name: 'characters',
   initialState: {
-    data: [], status: RequestStatus.idle, info: null, error: null,
+    data: [],
+    status: RequestStatus.idle,
+    info: null,
+    error: null,
   } as PageSliceType<Array<ChararterListItem>>,
   reducers: {},
   extraReducers: (builder) => {

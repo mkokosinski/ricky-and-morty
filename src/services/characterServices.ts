@@ -21,7 +21,7 @@ query getCharacter($id: ID!) {
     }
   }
 `;
-const get = async (id: string) : Promise<Chararter> => {
+const get = async (id: string): Promise<Chararter> => {
   const response = await api.post(GET_CHARACTER_QUERY, { id });
   return response.data.character;
 };
@@ -44,7 +44,7 @@ query getCharacters($page: Int, $filter: FilterCharacter) {
     }
   }
 `;
-const getPage = async ({ page, filter }: QueryVariables) : Promise<ResponseType<ChararterListItem>> => {
+const getPage = async ({ page, filter }: QueryVariables): Promise<ResponseType<ChararterListItem>> => {
   const response = await api.post(GET_CHARACTERS_PAGE_QUERY, { page, filter });
   const { results, info } = response.data.characters;
   return { results, info };

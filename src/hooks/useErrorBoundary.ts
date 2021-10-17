@@ -1,7 +1,8 @@
-import Routes from 'components/AppRouter/Routes';
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
+
+import Routes from 'components/AppRouter/Routes';
 import { selectErrors } from 'store/slices/errorsSlice';
 
 const useErrorBoundary = () => {
